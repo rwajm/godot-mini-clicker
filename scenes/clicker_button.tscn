@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcdj31cplynon"]
+
+[ext_resource type="Script" uid="uid://db4fc8uecmmam" path="res://scripts/clicker_button.gd" id="1_6kgqr"]
+[ext_resource type="Texture2D" uid="uid://d371eb71frejx" path="res://icon.svg" id="1_7qowl"]
+
+[node name="ClickerButton" type="Button"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -150.0
+offset_right = 150.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(150, 150)
+icon = ExtResource("1_7qowl")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("1_6kgqr")
