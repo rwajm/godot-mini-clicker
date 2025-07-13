@@ -1,0 +1,77 @@
+[gd_scene load_steps=7 format=3 uid="uid://df1oimf886234"]
+
+[ext_resource type="StyleBox" uid="uid://djrdrxwvc6fj6" path="res://assets/style_box_flat_item.tres" id="1_mdhk6"]
+[ext_resource type="Script" uid="uid://5jub373uaprt" path="res://scripts/upgrade_item.gd" id="1_vd32k"]
+[ext_resource type="LabelSettings" uid="uid://b64bdumv2qjo3" path="res://assets/label_settings_title.tres" id="3_isks0"]
+[ext_resource type="LabelSettings" uid="uid://cmcjc36abu7hj" path="res://assets/label_settings_description.tres" id="4_0e4al"]
+[ext_resource type="StyleBox" uid="uid://dd2260bp2eese" path="res://assets/style_box_flat_button.tres" id="5_n2pwb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n2pwb"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+
+[node name="UpgradeItem" type="PanelContainer"]
+custom_minimum_size = Vector2(0, 115)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 115.0
+grow_horizontal = 2
+theme_override_styles/panel = ExtResource("1_mdhk6")
+script = ExtResource("1_vd32k")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+
+[node name="NameLabel" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 10
+text = "UpgradeName"
+label_settings = ExtResource("3_isks0")
+vertical_alignment = 1
+
+[node name="LevelLabel" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 2
+text = "Lv. 0"
+label_settings = ExtResource("4_0e4al")
+vertical_alignment = 1
+
+[node name="UpgradeButton" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_styles/normal = ExtResource("5_n2pwb")
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/UpgradeButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_n2pwb")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/UpgradeButton/PanelContainer"]
+layout_mode = 2
+
+[node name="QuantityLabel" type="Label" parent="HBoxContainer/UpgradeButton/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "×1"
+label_settings = ExtResource("4_0e4al")
+
+[node name="CostLabel" type="Label" parent="HBoxContainer/UpgradeButton/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 8
+text = "0"
+label_settings = ExtResource("3_isks0")
